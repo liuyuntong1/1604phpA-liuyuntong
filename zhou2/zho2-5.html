@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<span id="time"> </span>
+	<script type="text/javascript">
+	//定时执行fun函数
+	setInterval('fun()',100);
+	function fun(){
+	//获取系统时间 
+		var time1=new Date();
+	//定义倒计时期限
+		var time2=new Date('2018-11-9 16:30:00');
+	//计算剩余秒
+		tt=(time2-time1)/1000;
+	//计算剩余天数
+		aa=parseInt(tt/3600/24);
+	//计算剩余小时
+		bb=parseInt(tt/3600%24);
+	//计算剩余分钟
+		cc=parseInt(tt/60%60);
+	//计算剩余秒数
+		dd=parseInt(tt%60);
+	//写入到span里，写入内容为剩余时间
+		document.getElementById('time').innerHTML="距离放学还有"+aa+"天"+bb+"小时"+cc+"分钟"+dd+"秒";
+	}
+	</script>
+</body>
+</html>
+
